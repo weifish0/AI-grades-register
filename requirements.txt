@@ -1,0 +1,5 @@
+SpeechRecognition==3.10.0
+PyAudio==0.2.13
+google-api-python-client==2.101.0
+google-auth-httplib2==0.1.1
+google-auth-oauthlib==0.4.6
