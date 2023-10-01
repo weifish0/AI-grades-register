@@ -90,6 +90,34 @@ def replace_cn_num_with_arab_num(text: str) -> str:
             text = text.replace(text_char, cn_to_arab_dict[text_char], 1)
     return text
 
+def get_number_and_grade(text) -> str:
+    try:
+        first_index = text.find("號")
+    except:
+        print("沒號")
+        return False
+                
+    try:
+        last_index = text.find("分")
+    except:
+        print("沒分")
+        return False
+
+    try: 
+        number = int(text[:first_index])
+    except:
+        print("找不到座號")
+        return False
+    
+    try: 
+        grade = int(text[first_index+1:last_index])
+    except:
+        print("找不到分數")
+        return False
+    
+    return number, grade
+    
+
 if __name__ == '__main__':
     print(replace_cn_num_with_arab_num(input("測試輸入: ")))
 
