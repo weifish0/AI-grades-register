@@ -25,6 +25,17 @@ def callback(recognizer, audio):
     except sr.RequestError as e:
         print("無法訪問google語音辨識API; {0}".format(e))
 
+def test_microphone():
+    r = sr.Recognizer()
+    m = sr.Microphone()
+    # print(sr.Microphone.list_microphone_names())
+    for device_index in sr.Microphone.list_working_microphones():
+        m = sr.Microphone(device_index=device_index)
+        print(m)
+        break
+    else:
+        print("找不到麥克風")
+
 def main(init_data):
     r = sr.Recognizer()
     m = sr.Microphone()

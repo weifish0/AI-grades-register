@@ -80,4 +80,4 @@ def register_grades(test_name, student_number, score):
 
 
 if __name__ == '__main__':
-    register_grades("常春藤w1", 13, 98)
+    register_grades(input("考試項目: "), int(input("座號: ")), int(input("分數: ")))

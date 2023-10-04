@@ -24,10 +24,10 @@ case_b:  *十
 case_c:  *十*
 '''
 def case_prefilter(text, pre_index, latter_index):
-    if text[pre_index] not in cn_to_arab_dict.keys():
+    if text[pre_index] not in cn_to_arab_dict:
         return case_a(text, latter_index)
     else:
-        if text[latter_index] not in cn_to_arab_dict.keys():
+        if text[latter_index] not in cn_to_arab_dict:
             return case_b(text, pre_index)
         else:
             return case_c(text, pre_index, latter_index)
@@ -35,7 +35,7 @@ def case_prefilter(text, pre_index, latter_index):
 # 十*
 # 十
 def case_a(text, latter_index):
-    if text[latter_index] not in cn_to_arab_dict.keys(): 
+    if text[latter_index] not in cn_to_arab_dict: 
         # 十
         text = text.replace('十', '10', 1)
     else:
@@ -86,7 +86,7 @@ def replace_cn_num_with_arab_num(text: str) -> str:
 
     # 0~9
     for text_char in text:
-        if text_char in cn_to_arab_dict.keys():
+        if text_char in cn_to_arab_dict:
             text = text.replace(text_char, cn_to_arab_dict[text_char], 1)
     return text
 
