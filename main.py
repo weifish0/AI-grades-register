@@ -56,5 +56,4 @@ def main(init_data):
     while True: 
         time.sleep(0.1)
 if __name__ == "__main__":
-    init_data = False
-    main(init_data)
+    main(init_data = False)

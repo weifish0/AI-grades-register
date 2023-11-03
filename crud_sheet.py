@@ -73,7 +73,7 @@ def register_grades(test_name, student_number, score):
     try:
         # sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=f"{TAB_SHEET_NAME}!B1",
         #                       valueInputOption="USER_ENTERED", body={"values": [[f"{test_name}"]]}).execute()
-        sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=f"{TAB_SHEET_NAME}!B{student_number+1}",
+        sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=f"{TAB_SHEET_NAME}!M{student_number+1}",
                                   valueInputOption="USER_ENTERED", body={"values": [[score]]}).execute()
     except:
         print("成績輸入錯誤")
